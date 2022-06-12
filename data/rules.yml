@@ -1,0 +1,14 @@
+version: "3.1"
+
+rules:
+
+#- rule: Move player anytime the user ask for it
+#  steps:
+#  - intent: ask_to_move_player
+#  - action: action_move_player
+#
+#- rule: Show Table anytime the user ask for it
+#  steps:
+#  - intent: ask_for_table
+#  - action: action_show_table
+

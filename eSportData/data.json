@@ -1,0 +1,88 @@
+//[
+//  {
+//    "name": "Lewandowski",
+//    "number": "9",
+//    "team": "Bayern"
+//  },
+//  {
+//    "name": "Sane",
+//    "number": "11",
+//    "team": "Bayern"
+//  },
+//  {
+//    "name": "Kimmich",
+//    "number": "15",
+//    "team": "Bayern"
+//  },
+//  {
+//    "name": "Oblak",
+//    "number": "1",
+//    "team": "Atletico"
+//  },
+//  {
+//    "name": "Suarez",
+//    "number": "9",
+//    "team": "Atletico"
+//  },
+//  {
+//    "name": "Griezmann",
+//    "number": "12",
+//    "team": "Atletico"
+//  },
+//  {
+//    "name": "Jezus",
+//    "number": "9",
+//    "team": "Manchester City"
+//  },
+//  {
+//    "name": "De Bruyne",
+//    "number": "5",
+//    "team": "Manchester City"
+//  },
+//  {
+//    "name": "Sterling",
+//    "number": "15",
+//    "team": "Manchester City"
+//  }
+//]
+
+
+
+{
+  "Lewandowski": [
+    9,
+    "Bayern"
+  ],
+  "Sane": [
+    11,
+    "Bayern"
+  ],
+  "Kimmich": [
+    15,
+    "Bayern"
+  ],
+  "Oblak": [
+    1,
+    "Atletico"
+  ],
+  "Suarez": [
+    9,
+    "Atletico"
+  ],
+  "Griezmann": [
+    12,
+    "Atletico"
+  ],
+  "Jezus": [
+    9,
+    "Manchester City"
+  ],
+  "De Bruyne": [
+    5,
+    "Manchester City"
+  ],
+  "Sterling": [
+    15,
+    "Manchester City"
+  ]
+}

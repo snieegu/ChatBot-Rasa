@@ -1,0 +1,72 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - thanks
+  - deny
+  - askForHelp
+  - ask_for_table
+  - ask_to_move_player
+  - ask_for_player
+  - ask_for_team_info
+
+responses:
+  utter_greet:
+  - text: "Hey!"
+
+  utter_howCanHelp:
+  - text: "I can show You the competition table and add players to the appropriate"
+
+  utter_showEuLeagueTable:
+  - text: "PLAYERS TABLE "
+
+  utter_askWhereAndWho:
+  - text: "with what number"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_addPlayer:
+  - text: "Done !"
+
+  utter_informAboutTransfer:
+  - text: "Added [player] with number [playerNumber] to [team] !"
+
+actions:
+  - action_move_player
+  - action_show_table
+  - action_show_team_info
+  - action_show_where_plays
+
+entities:
+  - player
+  - team
+  - number
+
+slots:
+  playerName:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: player
+
+  playerTeam:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: team
+
+  playerNumber:
+    type: float
+    min_value: 0
+    max_value: 100
+    mappings:
+      - type: from_entity
+        entity: number
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

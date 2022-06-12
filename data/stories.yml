@@ -1,0 +1,29 @@
+version: "3.1"
+
+stories:
+
+  - story: show Team Information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: askForHelp
+      - action: utter_howCanHelp
+      - intent: ask_for_team_info
+      - action: action_show_team_info
+
+  - story: move Player to other Team
+    steps:
+      - action: utter_howCanHelp
+      - intent: ask_to_move_player
+      - action: action_move_player
+
+  - story: show all Teams
+    steps:
+      - intent: ask_for_table
+      - action: action_show_table
+
+  - story: show all Teams
+    steps:
+      - intent: ask_for_player
+      - action: action_show_where_plays
+

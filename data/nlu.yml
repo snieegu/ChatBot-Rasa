@@ -1,0 +1,135 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - OK
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - nope
+
+  - intent: askForHelp
+    examples: |
+      - what can you do ?
+      - help me
+      - let's start
+      - begin
+      - go 
+      - help please
+      - what to do ?
+
+  - intent: ask_for_table
+    examples: |
+      - show me League table
+      - show League
+      - League table
+      - ranking
+      - eSport league
+
+  - intent: ask_to_move_player
+    examples: |
+      - add [Lewandowski](player) to [Manchester City](team) with [9](number)
+      - [Kane](player) [11](number) to [Manchester United](team) 
+      - move [Bale](player) with [13](number) to [Bayern](team)
+      - let's [Sane](player) [8](number) play in [Barcelona](team)
+
+  - intent: ask_for_player
+    examples: |
+      - where [Lewandowski](player) plays
+      - [Kane](player)
+      - on which team [Sane](player) plays 
+
+  - intent: ask_for_team_info
+    examples: |
+      - who plays in [Manchester City](team)
+      - [Bayern](team)
+      - show me [Barcelona](team) info
+      - show [Barcelona](team) 
+
+  - lookup: player
+    examples: |
+      - Lewandowski
+      - Sane
+      - Gnabry
+      - Muller
+      - Neuer
+      - Kimmich
+      - Coman
+      - Sule
+      - Musiala
+      - Suarez
+      - Griezmann
+      - De Paul
+      - Oblak
+      - Carrasco
+      - Correra
+  - lookup: team
+    examples: |
+      - Atletico Madryt
+      - Bayern
+      - Manchester City
+      - Manchester United
+  - lookup: number
+    examples: |
+      - 1
+      - 2
+      - 9
+      - 10
+      - 11
+      - 5
+      - 8
+
+  - intent: teamInfo
+    examples: |
+      - [Atletico Madryt](team)
+      - show [Bayern](team) players
+      - [Manchester United](team) informations
+      - show info about [Borussia](team)
