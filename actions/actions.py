@@ -23,7 +23,7 @@ class actionMovePlayer(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        file = open('../eSportData/players.json', 'r')
+        file = open('./eSportData/players.json', 'r')
         data = json.load(file)
 
         current_player = next(tracker.get_latest_entity_values("player"), None)
@@ -43,17 +43,18 @@ class actionMovePlayer(Action):
             msg = "Bad spelling or the player doesn't exist in DB"
             dispatcher.utter_message(text=msg)
 
-        if playerData[1] == current_team:
-            msg = "Player already in the team"
-            dispatcher.utter_message(text=msg)
-        else:
-            file.close()
-            file = open('../eSportData/players.json', 'w')
-            new_player = current_player
-            data[new_player] = [current_number, current_team]
-            json.dump(data, file)
-            msg = "Added" + new_player + "to" + current_team + "with number" + current_number
-            dispatcher.utter_message(text=msg)
+        if current_player:
+            if playerData[1] == current_team:
+                msg = "Player already in the team"
+                dispatcher.utter_message(text=msg)
+            else:
+                file.close()
+                file = open('./eSportData/players.json', 'w')
+                new_player = current_player
+                data[new_player] = [current_number, current_team]
+                json.dump(data, file)
+                msg = "Added " + new_player + " to " + current_team + " with number " + current_number
+                dispatcher.utter_message(text=msg)
 
         file.close()
         return []
@@ -67,9 +68,11 @@ class actionShowTable(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        file = open('../eSportData/players.json', 'r')
+        file = open('./eSportData/players.json', 'r')
         data = json.load(file)
-        pprint.pprint(data)
+        # pprint.pprint(data)
+        teamTable = []
+
         msg = data
         dispatcher.utter_message(text=msg)
         file.close()
@@ -84,14 +87,13 @@ class actionShowTeamInfo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        file = open('../eSportData/players.json', 'r')
+        file = open('./eSportData/players.json', 'r')
         data = json.load(file)
         current_team = next(tracker.get_latest_entity_values("team"), None)
 
         msg = "In " + current_team + " play: "
         dispatcher.utter_message(text=msg)
 
-        dispatcher.utter_message(text=msg)
         for player, info in data.items():
             if info[1] == current_team:
                 print(player)
@@ -108,12 +110,17 @@ class actionWhereHePlays(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        file = open('../eSportData/players.json', 'r')
+        file = open('./eSportData/players.json', 'r')
         data = json.load(file)
         current_player = next(tracker.get_latest_entity_values("player"), None)
-        playerData = data.get(current_player, None)
+        if current_player:
+            playerData = data.get(current_player, None)
 
-        msg = "Player " + current_player + " plays in " + playerData[1] + " with number " + playerData[0]
+            msg = "Player " + current_player + " plays in " + playerData[1] + " with number " + playerData[0]
+
+        else:
+            msg = "Where who play ?"
+
         dispatcher.utter_message(text=msg)
         file.close()
         return []

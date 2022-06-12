@@ -93,6 +93,11 @@ nlu:
       - [Bayern](team)
       - show me [Barcelona](team) info
       - show [Barcelona](team) 
+      - [Atletico Madryt](team)
+      - show [Bayern](team) players
+      - [Manchester United](team) informations
+      - show info about [Borussia](team)
+      - info [Barcelona](team) ?
 
   - lookup: player
     examples: |
@@ -113,7 +118,7 @@ nlu:
       - Correra
   - lookup: team
     examples: |
-      - Atletico Madryt
+      - Atletico
       - Bayern
       - Manchester City
       - Manchester United
@@ -127,9 +132,3 @@ nlu:
       - 5
       - 8
 
-  - intent: teamInfo
-    examples: |
-      - [Atletico Madryt](team)
-      - show [Bayern](team) players
-      - [Manchester United](team) informations
-      - show info about [Borussia](team)
