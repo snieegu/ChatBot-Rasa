@@ -2,6 +2,8 @@
 
 Integrated with Discord.
 
+Data stored in /eSportData/players.json
+
 
 Actions to take:
 
