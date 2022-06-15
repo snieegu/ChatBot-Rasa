@@ -13,9 +13,19 @@ stories:
 
   - story: move Player to other Team
     steps:
+      - intent: askForHelp
       - action: utter_howCanHelp
+      - intent: affirm
+      - action: utter_whatToDo
       - intent: ask_to_move_player
       - action: action_move_player
+
+  - story: move Player to other Team
+    steps:
+      - intent: askForHelp
+      - action: utter_howCanHelp
+      - intent: deny
+      - action: utter_goodbye
 
   - story: show all Teams
     steps:

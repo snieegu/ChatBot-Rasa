@@ -17,7 +17,7 @@ responses:
   - text: "Hey!"
 
   utter_howCanHelp:
-  - text: "I can show You the competition table and add players to the appropriate"
+  - text: "I can show You the competition table and add players to the appropriate. You want to move on ?"
 
   utter_showEuLeagueTable:
   - text: "PLAYERS TABLE "
@@ -26,13 +26,16 @@ responses:
   - text: "with what number"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye !"
 
   utter_addPlayer:
   - text: "Done !"
 
   utter_informAboutTransfer:
   - text: "Added [player] with number [playerNumber] to [team] !"
+
+  utter_whatToDo:
+  - text: "You can move a player, view team members, view all teams with players and see where a player is playing. "
 
 actions:
   - action_move_player
